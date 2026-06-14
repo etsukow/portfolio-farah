@@ -30,10 +30,6 @@ export default function Hero() {
         }}>
           A quiet garden of curiosity &mdash; where I grow intelligent systems, train models, and tend to ideas until they bloom.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 34, fontFamily: 'var(--font-cormorant), serif', letterSpacing: '.3em', textTransform: 'uppercase', fontSize: 12, color: '#5f7e52' }}>
-          <span style={{ display: 'inline-block', width: 9, height: 9, borderRadius: '50%', background: '#7b9e6b', boxShadow: '0 0 0 4px rgba(123,158,107,.22)' }} />
-          <span>Open to internships &middot; 2026</span>
-        </div>
       </div>
 
       <div style={{ position: 'relative', flex: 'none', zIndex: 2 }}>

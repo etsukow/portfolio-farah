@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { site } from '@/config/site';
 
 const skills = ['Machine Learning', 'Deep Learning', 'NLP', 'Python', 'PyTorch', 'Data Viz'];
 
@@ -164,10 +165,6 @@ export default function MobileGarden() {
         <p style={{ fontFamily: 'var(--font-eb-garamond), serif', fontSize: 'clamp(17px,4.5vw,21px)', lineHeight: 1.55, color: '#5a4636', maxWidth: 340, margin: '0 auto 24px' }}>
           A quiet garden of curiosity — where I grow intelligent systems, train models, and tend to ideas until they bloom.
         </p>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 8, justifyContent: 'center', fontFamily: 'var(--font-cormorant), serif', letterSpacing: '.28em', textTransform: 'uppercase', fontSize: 11, color: '#5f7e52' }}>
-          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#7b9e6b', boxShadow: '0 0 0 3px rgba(123,158,107,.22)', display: 'inline-block' }} />
-          <span>Open to internships · 2026</span>
-        </div>
       </section>
 
       {/* ===== ABOUT ===== */}
@@ -253,20 +250,20 @@ export default function MobileGarden() {
 
       {/* ===== CONTACT ===== */}
       <section id="room-contact" style={{ padding: '64px 24px 160px', textAlign: 'center', position: 'relative' }}>
-        <div style={{ fontFamily: 'var(--font-pinyon), cursive', fontSize: 40, color: '#7b9e6b', lineHeight: 1, marginBottom: 18 }}>Let&rsquo;s grow</div>
-        <h2 style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 500, fontSize: 'clamp(36px,10vw,64px)', lineHeight: 1, margin: '0 0 22px', color: '#3a2a20' }}>something together</h2>
+        <div style={{ fontFamily: 'var(--font-pinyon), cursive', fontSize: 40, color: '#7b9e6b', lineHeight: 1, marginBottom: 18 }}>Let&rsquo;s keep in touch</div>
+        <h2 style={{ fontFamily: 'var(--font-cormorant), serif', fontWeight: 500, fontSize: 'clamp(36px,10vw,64px)', lineHeight: 1, margin: '0 0 22px', color: '#3a2a20' }}>say hello</h2>
         <p style={{ fontFamily: 'var(--font-eb-garamond), serif', fontSize: 18, lineHeight: 1.6, color: '#5a4636', maxWidth: 340, margin: '0 auto 32px' }}>
-          Looking for an internship where I can plant something thoughtful and watch it grow. If that sounds like your garden, let&rsquo;s talk.
+          If you want to keep in touch, collaborate, or just say hello — the garden gate is always open.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, fontFamily: 'var(--font-cormorant), serif', fontSize: 18, letterSpacing: '.04em' }}>
-          <a href="mailto:farah.safsafi@email.com" data-link style={{ color: '#8c3d52', borderBottom: '1px solid rgba(140,61,82,.4)', paddingBottom: 3 }}>Email</a>
-          <a href="https://github.com/farahsafsafi" target="_blank" rel="noopener noreferrer" data-link style={{ color: '#8c3d52', borderBottom: '1px solid rgba(140,61,82,.4)', paddingBottom: 3 }}>GitHub</a>
-          <a href="https://www.linkedin.com/in/farahsafsafi" target="_blank" rel="noopener noreferrer" data-link style={{ color: '#8c3d52', borderBottom: '1px solid rgba(140,61,82,.4)', paddingBottom: 3 }}>LinkedIn</a>
+          <a href={`mailto:${site.email}`} data-link style={{ color: '#8c3d52', borderBottom: '1px solid rgba(140,61,82,.4)', paddingBottom: 3 }}>Email</a>
+          <a href={site.github} target="_blank" rel="noopener noreferrer" data-link style={{ color: '#8c3d52', borderBottom: '1px solid rgba(140,61,82,.4)', paddingBottom: 3 }}>GitHub</a>
+          <a href={site.linkedin} target="_blank" rel="noopener noreferrer" data-link style={{ color: '#8c3d52', borderBottom: '1px solid rgba(140,61,82,.4)', paddingBottom: 3 }}>LinkedIn</a>
         </div>
-        <div style={{ fontFamily: 'var(--font-pinyon), cursive', fontSize: 38, color: '#8c3d52', marginTop: 44 }}>Farah Safsafi</div>
+        <div style={{ fontFamily: 'var(--font-pinyon), cursive', fontSize: 38, color: '#8c3d52', marginTop: 44 }}>{site.name}</div>
         <div style={{ marginTop: 32 }}>
-          <a href="https://github.com/etsukow" target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--font-cormorant), serif', fontSize: 11, letterSpacing: '.14em', color: '#9e8b76', textDecoration: 'none', borderBottom: '1px solid rgba(158,139,118,.35)', paddingBottom: 1 }}>
-            made by etsukow with ♥ 
+          <a href={site.madeBy.url} target="_blank" rel="noopener noreferrer" style={{ fontFamily: 'var(--font-cormorant), serif', fontSize: 11, letterSpacing: '.14em', color: '#9e8b76', textDecoration: 'none', borderBottom: '1px solid rgba(158,139,118,.35)', paddingBottom: 1 }}>
+            made by {site.madeBy.label} with ♥
           </a>
         </div>
       </section>
