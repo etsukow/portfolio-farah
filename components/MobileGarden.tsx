@@ -34,17 +34,21 @@ const experiences = [
 
 export default function MobileGarden() {
   const progressRef = useRef<HTMLDivElement>(null);
+  const scrollerRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    const sc = scrollerRef.current;
+    if (!sc) return;
     const onScroll = () => {
       const el = progressRef.current;
       if (!el) return;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      el.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+      const max = sc.scrollHeight - sc.clientHeight;
+      el.style.width = max > 0 ? (sc.scrollTop / max * 100) + '%' : '0%';
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    sc.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => sc.removeEventListener('scroll', onScroll);
   }, []);
 
   const scrollTo = (id: string) => {
@@ -53,13 +57,13 @@ export default function MobileGarden() {
   };
 
   return (
-    <div style={{ fontFamily: 'var(--font-eb-garamond), Georgia, serif', color: '#4a3528', background: 'linear-gradient(180deg,#f7ecda 0%,#f3e6d4 55%,#ead9c0 100%)', minHeight: '100vh' }}>
+    <div style={{ position: 'fixed', inset: 0, overflow: 'hidden', fontFamily: 'var(--font-eb-garamond), Georgia, serif', color: '#4a3528', background: 'linear-gradient(180deg,#f7ecda 0%,#f3e6d4 55%,#ead9c0 100%)' }}>
 
-      {/* Fixed header bar */}
+      {/* Header bar */}
       <div style={{
-        position: 'fixed', top: 0, left: 0, right: 0, zIndex: 30,
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '12px 20px',
+        position: 'absolute', top: -80, left: 0, right: 0, zIndex: 30,
+        display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
+        padding: '92px 20px 12px',
         background: 'rgba(247,236,218,.92)',
         backdropFilter: 'blur(8px)',
         WebkitBackdropFilter: 'blur(8px)',
@@ -86,7 +90,7 @@ export default function MobileGarden() {
       {/* Slide-in menu */}
       {menuOpen && (
         <div style={{
-          position: 'fixed', inset: 0, zIndex: 25, background: '#f5e9d5',
+          position: 'absolute', inset: 0, zIndex: 25, background: '#f5e9d5',
           display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
           gap: 32,
         }}>
@@ -111,12 +115,12 @@ export default function MobileGarden() {
       )}
 
       {/* Progress bar */}
-      <div style={{ position: 'fixed', bottom: 0, left: 0, width: '100%', height: 3, zIndex: 20, background: 'rgba(122,84,60,.12)' }}>
+      <div style={{ position: 'absolute', bottom: 0, left: 0, width: '100%', height: 3, zIndex: 20, background: 'rgba(122,84,60,.12)' }}>
         <div ref={progressRef} style={{ height: '100%', width: '0%', background: 'linear-gradient(90deg,#7b9e6b,#c9577a)', transition: 'width .08s linear' }} />
       </div>
 
       {/* Falling petals */}
-      <div style={{ position: 'fixed', inset: 0, pointerEvents: 'none', overflow: 'hidden', zIndex: 1 }}>
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden', zIndex: 8 }}>
         {[
           { left: '8%', color: '#d96f8e', w: 12, h: 9, dur: '11s', delay: '0s' },
           { left: '28%', color: '#e8c8d4', w: 10, h: 8, dur: '13s', delay: '2s' },
@@ -130,6 +134,11 @@ export default function MobileGarden() {
           }} />
         ))}
       </div>
+
+      {/* Inner scroll container — the page itself doesn't scroll (the shell is
+          fixed), so iOS can't rubber-band the document and the decorative
+          fixed/absolute layers never jump. */}
+      <div ref={scrollerRef} style={{ position: 'absolute', inset: 0, zIndex: 5, overflowY: 'auto', overflowX: 'hidden', WebkitOverflowScrolling: 'touch', overscrollBehavior: 'none' }}>
 
       {/* ===== HERO ===== */}
       <section id="room-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '100px 28px 160px', textAlign: 'center' }}>
@@ -268,8 +277,12 @@ export default function MobileGarden() {
         </div>
       </section>
 
-      {/* Fixed flower band */}
-      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, height: 110, zIndex: 14, pointerEvents: 'none' }}>
+      </div>{/* end inner scroll container */}
+
+      {/* Flower band — pinned to the shell bottom (absolute inside the fixed shell) */}
+      <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 110, zIndex: 14, pointerEvents: 'none', transform: 'translateZ(0)' }}>
+        {/* Green base fill — extends below the viewport edge so an iOS overscroll gap shows grass, not page bg */}
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: -160, height: 200, background: 'linear-gradient(90deg,#3f8a3c,#2e7a3a 80%,#226f37)' }} />
         <div style={{ position: 'absolute', bottom: 30, left: -80, width: 180, height: 180, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 10px 12px rgba(99,45,60,.18))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
         <div style={{ position: 'absolute', bottom: 30, right: -80, width: 180, height: 180, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 10px 12px rgba(99,45,60,.18))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: 36, height: 84, background: "url('/assets/bluebells.png') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
