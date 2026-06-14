@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Gallery from './sections/Gallery';
@@ -11,6 +11,15 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 
 export default function Garden() {
   const isMobile = useIsMobile();
+  // Flower band scales with viewport height so it never covers content on
+  // shorter screens (full size at ~900px tall, smaller below).
+  const [bandScale, setBandScale] = useState(1);
+  useEffect(() => {
+    const calc = () => setBandScale(Math.max(0.5, Math.min(1, window.innerHeight / 900)));
+    calc();
+    window.addEventListener('resize', calc);
+    return () => window.removeEventListener('resize', calc);
+  }, []);
   const contentRef = useRef<HTMLDivElement>(null);
   const spacerRef = useRef<HTMLDivElement>(null);
   const progressRef = useRef<HTMLDivElement>(null);
@@ -170,13 +179,13 @@ export default function Garden() {
 
 
 
-      {/* Fixed flower band */}
-      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, height: 150, zIndex: 14, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', bottom: 40, left: -120, width: 250, height: 250, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', bottom: 40, right: -120, width: 250, height: 250, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 48, height: 112, background: "url('/assets/bluebells.png') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 24, height: 116, background: "url('/assets/daffodils.png') 180px bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.93)' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 120, background: "url('/assets/flowerbed.png') -90px bottom repeat-x", backgroundSize: 'auto 100%' }} />
+      {/* Fixed flower band — scales with viewport height (bandScale) */}
+      <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, height: 150 * bandScale, zIndex: 14, pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', bottom: 40 * bandScale, left: -120 * bandScale, width: 250 * bandScale, height: 250 * bandScale, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', bottom: 40 * bandScale, right: -120 * bandScale, width: 250 * bandScale, height: 250 * bandScale, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 48 * bandScale, height: 112 * bandScale, background: "url('/assets/bluebells.png') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 24 * bandScale, height: 116 * bandScale, background: "url('/assets/daffodils.png') 180px bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.93)' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 120 * bandScale, background: "url('/assets/flowerbed.png') -90px bottom repeat-x", backgroundSize: 'auto 100%' }} />
       </div>
 
       {/* Fixed logo */}
