@@ -35,6 +35,7 @@ const experiences = [
 export default function MobileGarden() {
   const progressRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLDivElement>(null);
+  const hintRef = useRef<HTMLDivElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -42,9 +43,11 @@ export default function MobileGarden() {
     if (!sc) return;
     const onScroll = () => {
       const el = progressRef.current;
-      if (!el) return;
-      const max = sc.scrollHeight - sc.clientHeight;
-      el.style.width = max > 0 ? (sc.scrollTop / max * 100) + '%' : '0%';
+      if (el) {
+        const max = sc.scrollHeight - sc.clientHeight;
+        el.style.width = max > 0 ? (sc.scrollTop / max * 100) + '%' : '0%';
+      }
+      if (hintRef.current) hintRef.current.style.opacity = sc.scrollTop > 60 ? '0' : '1';
     };
     sc.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -62,7 +65,7 @@ export default function MobileGarden() {
       {/* Header bar */}
       <div style={{
         position: 'absolute', top: -80, left: 0, right: 0, zIndex: 30,
-        display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '92px 20px 12px',
         background: 'rgba(247,236,218,.92)',
         backdropFilter: 'blur(8px)',
@@ -278,6 +281,13 @@ export default function MobileGarden() {
       </section>
 
       </div>{/* end inner scroll container */}
+
+      {/* Scroll hint — single line, tucked into the gap above the flower band,
+          fades on scroll (#1) */}
+      <div ref={hintRef} style={{ position: 'absolute', bottom: 126, left: '50%', transform: 'translateX(-50%)', zIndex: 15, display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'var(--font-cormorant), serif', letterSpacing: '.3em', textTransform: 'uppercase', fontSize: 10, color: '#6e5a45', textShadow: '0 1px 3px rgba(247,236,218,1), 0 0 10px rgba(247,236,218,1)', transition: 'opacity .3s', pointerEvents: 'none', whiteSpace: 'nowrap' }}>
+        <span>scroll</span>
+        <span style={{ display: 'inline-block', animation: 'sg-bird 1.6s ease-in-out infinite' }}>&#8595;</span>
+      </div>
 
       {/* Flower band — pinned to the shell bottom (absolute inside the fixed shell) */}
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 110, zIndex: 14, pointerEvents: 'none', transform: 'translateZ(0)' }}>

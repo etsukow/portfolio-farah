@@ -207,8 +207,8 @@ export default function Garden() {
         ))}
       </nav>
 
-      {/* Scroll hint */}
-      <div ref={hintRef} style={{ position: 'fixed', bottom: 30, left: '50%', transform: 'translateX(-50%)', zIndex: 20, display: 'flex', alignItems: 'center', gap: 12, fontFamily: 'var(--font-cormorant), serif', letterSpacing: '.32em', textTransform: 'uppercase', fontSize: 11, color: '#6e5a45', transition: 'opacity .3s' }}>
+      {/* Scroll hint — sits above the flower band so it stays readable (#1) */}
+      <div ref={hintRef} style={{ position: 'fixed', bottom: Math.round(150 * bandScale + 28), left: '50%', transform: 'translateX(-50%)', zIndex: 20, display: 'flex', alignItems: 'center', gap: 12, fontFamily: 'var(--font-cormorant), serif', letterSpacing: '.32em', textTransform: 'uppercase', fontSize: 11, color: '#6e5a45', textShadow: '0 1px 8px rgba(247,236,218,.9)', transition: 'opacity .3s' }}>
         <span>scroll to wander the garden</span>
         <span style={{ display: 'inline-block', animation: 'sg-hint 1.8s ease-in-out infinite' }}>&#10230;</span>
       </div>
