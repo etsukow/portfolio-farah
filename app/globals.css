@@ -1,5 +1,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { background: #e9dcc6; -webkit-font-smoothing: antialiased; overscroll-behavior: none; }
+html, body { background: #e9dcc6; -webkit-font-smoothing: antialiased; overscroll-behavior: none; scrollbar-width: none; -ms-overflow-style: none; }
+/* Hide the document scrollbar — the desktop garden scrolls vertically only to
+   drive the horizontal pan; the bottom progress bar already shows position. */
+html::-webkit-scrollbar, body::-webkit-scrollbar { width: 0; height: 0; display: none; }
 
 /* Mobile garden inner scroller — hide the scrollbar so it never eats width and
    shifts the centred content off-axis (visible in Safari RDM / desktop where
