@@ -141,7 +141,7 @@ export default function MobileGarden() {
       {/* Inner scroll container — the page itself doesn't scroll (the shell is
           fixed), so iOS can't rubber-band the document and the decorative
           fixed/absolute layers never jump. */}
-      <div ref={scrollerRef} style={{ position: 'absolute', inset: 0, zIndex: 5, overflowY: 'auto', overflowX: 'hidden', WebkitOverflowScrolling: 'touch', overscrollBehavior: 'none' }}>
+      <div ref={scrollerRef} className="mg-scroll" style={{ position: 'absolute', inset: 0, zIndex: 5, overflowY: 'auto', overflowX: 'hidden', WebkitOverflowScrolling: 'touch', overscrollBehavior: 'none' }}>
 
       {/* ===== HERO ===== */}
       <section id="room-hero" style={{ position: 'relative', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '100px 28px 160px', textAlign: 'center' }}>
