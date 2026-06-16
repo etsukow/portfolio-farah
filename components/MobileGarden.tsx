@@ -7,25 +7,25 @@ const skills = ['Machine Learning', 'Deep Learning', 'NLP', 'Python', 'PyTorch',
 
 const experiences = [
   {
-    image: '/assets/exp-schneider.jpg', imagePos: 'center',
+    image: '/assets/exp-schneider.webp', imagePos: 'center',
     tag: 'Alternance · Cybersecurity', title: 'Schneider Electric',
     desc: 'Digital Specialist & Cybersecurity Apprentice, hardening industrial digital systems. Oct 2025 – present.',
     rotate: '-1deg',
   },
   {
-    image: '/assets/exp-qubit.jpg', imagePos: 'center',
+    image: '/assets/exp-qubit.webp', imagePos: 'center',
     tag: 'Internship · Engineering', title: 'Qubit Engineering Inc.',
     desc: 'Summer engineering intern building and testing technical software. Jun – Aug 2025.',
     rotate: '1deg',
   },
   {
-    image: '/assets/exp-enactus.jpg', imagePos: 'center 72%',
+    image: '/assets/exp-enactus.webp', imagePos: 'center 72%',
     tag: 'Leadership · Enactus', title: 'Enactus ISG Tunis',
     desc: 'Team Leader steering a student team through social-impact projects. 2021 – 2024.',
     rotate: '-0.6deg',
   },
   {
-    image: '/assets/exp-warzeez.png', imagePos: 'center',
+    image: '/assets/exp-warzeez.webp', imagePos: 'center',
     tag: 'Internship · Software', title: 'WARZEEZ Solutions',
     desc: 'Software engineering intern shipping features end to end. Mar – Jun 2024.',
     rotate: '0.8deg',
@@ -157,12 +157,12 @@ export default function MobileGarden() {
             background: 'linear-gradient(160deg,#fbf2e3,#efe0c9)',
             boxShadow: '0 20px 40px -20px rgba(74,53,40,.5), inset 0 0 0 1px rgba(176,137,104,.3)',
           }}>
-            <div style={{ width: '100%', height: '100%', borderRadius: '50% 50% 4px 4px / 38% 38% 3px 3px', overflow: 'hidden', background: "url('/assets/portrait.png') center 30%/cover no-repeat" }} />
+            <div style={{ width: '100%', height: '100%', borderRadius: '50% 50% 4px 4px / 38% 38% 3px 3px', overflow: 'hidden', background: "url('/assets/portrait.webp') center 30%/cover no-repeat" }} />
           </div>
           {/* Carnation */}
-          <div style={{ position: 'absolute', top: -20, left: '50%', marginLeft: -90, width: 70, height: 70, animation: 'sg-sway 7s ease-in-out infinite', transformOrigin: '50% 92%', background: "url('/assets/carnation.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 6px 8px rgba(99,45,60,.2))' }} />
+          <div style={{ position: 'absolute', top: -20, left: '50%', marginLeft: -90, width: 70, height: 70, animation: 'sg-sway 7s ease-in-out infinite', transformOrigin: '50% 92%', background: "url('/assets/carnation.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 6px 8px rgba(99,45,60,.2))' }} />
           {/* Jasmine */}
-          <div style={{ position: 'absolute', bottom: 10, right: '50%', marginRight: -90, width: 56, height: 56, animation: 'sg-sway-slow 6s ease-in-out infinite', transformOrigin: '50% 90%', background: "url('/assets/jasmine-1400.png') center bottom/contain no-repeat" }} />
+          <div style={{ position: 'absolute', bottom: 10, right: '50%', marginRight: -90, width: 56, height: 56, animation: 'sg-sway-slow 6s ease-in-out infinite', transformOrigin: '50% 90%', background: "url('/assets/jasmine-1400.webp') center bottom/contain no-repeat" }} />
         </div>
 
         {/* Text */}
@@ -196,14 +196,14 @@ export default function MobileGarden() {
             ))}
           </div>
           {/* Jasmine top-right */}
-          <div style={{ position: 'absolute', top: -24, right: 24, width: 50, height: 50, animation: 'sg-sway 6.5s ease-in-out infinite', transformOrigin: '50% 90%', background: "url('/assets/jasmine-1400.png') center bottom/contain no-repeat" }} />
+          <div style={{ position: 'absolute', top: -24, right: 24, width: 50, height: 50, animation: 'sg-sway 6.5s ease-in-out infinite', transformOrigin: '50% 90%', background: "url('/assets/jasmine-1400.webp') center bottom/contain no-repeat" }} />
           {/* Carnation bottom-left */}
-          <div style={{ position: 'absolute', bottom: -22, left: -16, width: 60, height: 60, animation: 'sg-sway-slow 7.5s ease-in-out infinite', transformOrigin: '50% 92%', filter: 'drop-shadow(0 5px 7px rgba(99,45,60,.18))', background: "url('/assets/carnation.png') center bottom/contain no-repeat" }} />
+          <div style={{ position: 'absolute', bottom: -22, left: -16, width: 60, height: 60, animation: 'sg-sway-slow 7.5s ease-in-out infinite', transformOrigin: '50% 92%', filter: 'drop-shadow(0 5px 7px rgba(99,45,60,.18))', background: "url('/assets/carnation.webp') center bottom/contain no-repeat" }} />
         </div>
 
         {/* Cat */}
         <div style={{ display: 'flex', justifyContent: 'flex-end', maxWidth: 500, margin: '24px auto 0', paddingRight: 16 }}>
-          <div style={{ width: 140, height: 130, background: "url('/assets/cat-stretch.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 8px 10px rgba(74,53,40,.22))' }} />
+          <div style={{ width: 140, height: 130, background: "url('/assets/cat-stretch.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 8px 10px rgba(74,53,40,.22))' }} />
         </div>
       </section>
 
@@ -242,7 +242,7 @@ export default function MobileGarden() {
       <section id="room-cafe" style={{ padding: '64px 24px 80px', textAlign: 'center', position: 'relative' }}>
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(60% 50% at 50% 50%, rgba(107,79,58,.1), transparent 70%)', pointerEvents: 'none' }} />
         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 24 }}>
-          <div style={{ width: 'min(55vw,200px)', height: 'min(58vw,210px)', background: "url('/assets/coffee-water.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 12px 16px rgba(74,53,40,.24))' }} />
+          <div style={{ width: 'min(55vw,200px)', height: 'min(58vw,210px)', background: "url('/assets/coffee-water.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 12px 16px rgba(74,53,40,.24))' }} />
         </div>
         <div style={{ maxWidth: 360, margin: '0 auto', position: 'relative' }}>
           <div style={{ fontFamily: 'var(--font-pinyon), cursive', fontSize: 40, color: '#7b9e6b', lineHeight: 0.8, marginBottom: 16 }}>an interlude</div>
@@ -255,7 +255,7 @@ export default function MobileGarden() {
             <span style={{ display: 'block', width: 26, height: 1, background: '#b08968' }} />
           </div>
           <div style={{ marginTop: 28, display: 'flex', justifyContent: 'center' }}>
-            <div style={{ width: 170, height: 95, background: "url('/assets/cat-sleeping.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 8px 10px rgba(74,53,40,.22))' }} />
+            <div style={{ width: 170, height: 95, background: "url('/assets/cat-sleeping.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 8px 10px rgba(74,53,40,.22))' }} />
           </div>
         </div>
       </section>
@@ -293,11 +293,11 @@ export default function MobileGarden() {
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 110, zIndex: 14, pointerEvents: 'none', transform: 'translateZ(0)' }}>
         {/* Green base fill — extends below the viewport edge so an iOS overscroll gap shows grass, not page bg */}
         <div style={{ position: 'absolute', left: 0, right: 0, bottom: -160, height: 200, background: 'linear-gradient(90deg,#3f8a3c,#2e7a3a 80%,#226f37)' }} />
-        <div style={{ position: 'absolute', bottom: 30, left: -80, width: 180, height: 180, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 10px 12px rgba(99,45,60,.18))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', bottom: 30, right: -80, width: 180, height: 180, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 10px 12px rgba(99,45,60,.18))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 36, height: 84, background: "url('/assets/bluebells.png') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 18, height: 86, background: "url('/assets/daffodils.png') 140px bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.93)' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 88, background: "url('/assets/flowerbed.png') -60px bottom repeat-x", backgroundSize: 'auto 100%' }} />
+        <div style={{ position: 'absolute', bottom: 30, left: -80, width: 180, height: 180, background: "url('/assets/cluster.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 10px 12px rgba(99,45,60,.18))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', bottom: 30, right: -80, width: 180, height: 180, background: "url('/assets/cluster.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 10px 12px rgba(99,45,60,.18))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 36, height: 84, background: "url('/assets/bluebells.webp') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 18, height: 86, background: "url('/assets/daffodils.webp') 140px bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.93)' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 88, background: "url('/assets/flowerbed.webp') -60px bottom repeat-x", backgroundSize: 'auto 100%' }} />
       </div>
     </div>
   );

@@ -42,14 +42,14 @@ export default function About() {
         <div style={{
           position: 'absolute', top: -32, right: 36, width: 64, height: 64,
           animation: 'sg-sway 6.5s ease-in-out infinite', transformOrigin: '50% 90%',
-          background: "url('/assets/jasmine-1400.png') center bottom/contain no-repeat",
+          background: "url('/assets/jasmine-1400.webp') center bottom/contain no-repeat",
         }} />
         {/* Carnation bottom-left */}
         <div style={{
           position: 'absolute', bottom: -28, left: -22, width: 78, height: 78,
           animation: 'sg-sway-slow 7.5s ease-in-out infinite', transformOrigin: '50% 92%',
           filter: 'drop-shadow(0 6px 8px rgba(99,45,60,.2))',
-          background: "url('/assets/carnation.png') center bottom/contain no-repeat",
+          background: "url('/assets/carnation.webp') center bottom/contain no-repeat",
         }} />
       </div>
 
@@ -57,7 +57,7 @@ export default function About() {
       <div style={{ position: 'absolute', right: '8vw', bottom: 'calc(210px + 2vh)', zIndex: 2 }}>
         <div style={{
           width: 200, height: 185,
-          background: "url('/assets/cat-stretch.png') center bottom/contain no-repeat",
+          background: "url('/assets/cat-stretch.webp') center bottom/contain no-repeat",
           filter: 'drop-shadow(0 12px 14px rgba(74,53,40,.26))',
         }} />
       </div>

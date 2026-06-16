@@ -33,6 +33,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${ebGaramond.variable} ${pinyonScript.variable}`}>
+      <head>
+        {/* The hero portrait is the LCP element but lives in a CSS background,
+            so the browser only discovers it after layout — preload it early. */}
+        <link rel="preload" as="image" href="/assets/portrait.webp" />
+      </head>
       <body>{children}</body>
     </html>
   );

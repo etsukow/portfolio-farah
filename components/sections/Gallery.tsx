@@ -1,6 +1,6 @@
 const experiences = [
   {
-    image: '/assets/exp-schneider.jpg',
+    image: '/assets/exp-schneider.webp',
     imagePos: 'center',
     tag: 'Alternance · Cybersecurity',
     title: 'Schneider Electric',
@@ -10,7 +10,7 @@ const experiences = [
     floral: { type: 'carnation', bottom: -24, right: -20, sway: 'sg-sway 7.5s ease-in-out infinite', origin: '50% 92%', size: 66 },
   },
   {
-    image: '/assets/exp-qubit.jpg',
+    image: '/assets/exp-qubit.webp',
     imagePos: 'center',
     tag: 'Internship · Engineering',
     title: 'Qubit Engineering Inc.',
@@ -20,7 +20,7 @@ const experiences = [
     floral: { type: 'jasmine', top: -26, left: -20, sway: 'sg-sway-slow 6.5s ease-in-out infinite', origin: '50% 90%', size: 62 },
   },
   {
-    image: '/assets/exp-enactus.jpg',
+    image: '/assets/exp-enactus.webp',
     imagePos: 'center 72%',
     tag: 'Leadership · Enactus',
     title: 'Enactus ISG Tunis',
@@ -30,7 +30,7 @@ const experiences = [
     floral: { type: 'carnation', top: -26, left: -22, sway: 'sg-sway 7s ease-in-out infinite', origin: '50% 92%', size: 66 },
   },
   {
-    image: '/assets/exp-warzeez.png',
+    image: '/assets/exp-warzeez.webp',
     imagePos: 'center',
     tag: 'Internship · Software',
     title: 'WARZEEZ Solutions',
@@ -68,7 +68,7 @@ export default function Gallery() {
       <div style={{ flex: 'none', display: 'flex', gap: 34, alignItems: 'center', zIndex: 2, paddingRight: '6vw' }}>
         {experiences.map((exp) => {
           const f = exp.floral;
-          const floralSrc = f.type === 'carnation' ? '/assets/carnation.png' : '/assets/jasmine-1400.png';
+          const floralSrc = f.type === 'carnation' ? '/assets/carnation.webp' : '/assets/jasmine-1400.webp';
           const floralStyle: React.CSSProperties = {
             position: 'absolute', zIndex: 3, width: f.size, height: f.size,
             filter: 'drop-shadow(0 5px 7px rgba(99,45,60,.2))',

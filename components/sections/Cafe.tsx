@@ -15,7 +15,7 @@ export default function Cafe() {
       <div style={{
         position: 'relative', flex: 'none', zIndex: 2,
         width: 300, height: 320,
-        background: "url('/assets/coffee-water.png') center bottom/contain no-repeat",
+        background: "url('/assets/coffee-water.webp') center bottom/contain no-repeat",
         filter: 'drop-shadow(0 16px 20px rgba(74,53,40,.26))',
       }} />
 
@@ -37,7 +37,7 @@ export default function Cafe() {
         <div style={{ position: 'absolute', right: -40, bottom: -92 }}>
           <div style={{
             width: 235, height: 130,
-            background: "url('/assets/cat-sleeping.png') center bottom/contain no-repeat",
+            background: "url('/assets/cat-sleeping.webp') center bottom/contain no-repeat",
             filter: 'drop-shadow(0 12px 14px rgba(74,53,40,.26))',
           }} />
         </div>

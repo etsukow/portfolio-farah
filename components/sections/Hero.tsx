@@ -45,7 +45,7 @@ export default function Hero() {
             display: 'block', width: '100%', height: '100%',
             borderRadius: '50% 50% 4px 4px / 38% 38% 3px 3px',
             overflow: 'hidden',
-            background: "url('/assets/portrait.png') center 30%/cover no-repeat",
+            background: "url('/assets/portrait.webp') center 30%/cover no-repeat",
           }} />
           <div style={{
             position: 'absolute', inset: 14,
@@ -59,19 +59,19 @@ export default function Hero() {
           position: 'absolute', top: -30, left: -28, width: 100, height: 100,
           filter: 'drop-shadow(0 8px 10px rgba(99,45,60,.22))',
           animation: 'sg-sway 7s ease-in-out infinite', transformOrigin: '50% 92%',
-          background: "url('/assets/carnation.png') center bottom/contain no-repeat",
+          background: "url('/assets/carnation.webp') center bottom/contain no-repeat",
         }} />
         {/* Jasmine bottom-right */}
         <div style={{
           position: 'absolute', bottom: 18, right: -32, width: 78, height: 78,
           filter: 'drop-shadow(0 5px 7px rgba(99,45,60,.16))',
           animation: 'sg-sway-slow 6s ease-in-out infinite', transformOrigin: '50% 90%',
-          background: "url('/assets/jasmine-1400.png') center bottom/contain no-repeat",
+          background: "url('/assets/jasmine-1400.webp') center bottom/contain no-repeat",
         }} />
         <div style={{
           position: 'absolute', bottom: -20, left: 34, width: 52, height: 52,
           animation: 'sg-float 8s ease-in-out infinite',
-          background: "url('/assets/jasmine-1400.png') center bottom/contain no-repeat",
+          background: "url('/assets/jasmine-1400.webp') center bottom/contain no-repeat",
         }} />
       </div>
     </section>

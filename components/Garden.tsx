@@ -181,11 +181,11 @@ export default function Garden() {
 
       {/* Fixed flower band — scales with viewport height (bandScale) */}
       <div style={{ position: 'fixed', left: 0, right: 0, bottom: 0, height: 150 * bandScale, zIndex: 14, pointerEvents: 'none' }}>
-        <div style={{ position: 'absolute', bottom: 40 * bandScale, left: -120 * bandScale, width: 250 * bandScale, height: 250 * bandScale, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', bottom: 40 * bandScale, right: -120 * bandScale, width: 250 * bandScale, height: 250 * bandScale, background: "url('/assets/cluster.png') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 48 * bandScale, height: 112 * bandScale, background: "url('/assets/bluebells.png') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 24 * bandScale, height: 116 * bandScale, background: "url('/assets/daffodils.png') 180px bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.93)' }} />
-        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 120 * bandScale, background: "url('/assets/flowerbed.png') -90px bottom repeat-x", backgroundSize: 'auto 100%' }} />
+        <div style={{ position: 'absolute', bottom: 40 * bandScale, left: -120 * bandScale, width: 250 * bandScale, height: 250 * bandScale, background: "url('/assets/cluster.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 10s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', bottom: 40 * bandScale, right: -120 * bandScale, width: 250 * bandScale, height: 250 * bandScale, background: "url('/assets/cluster.webp') center bottom/contain no-repeat", filter: 'drop-shadow(0 14px 16px rgba(99,45,60,.2))', transformOrigin: '50% 100%', animation: 'sg-sway-slow 11s ease-in-out infinite' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 48 * bandScale, height: 112 * bandScale, background: "url('/assets/bluebells.webp') 0 bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.82) saturate(.86)' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 24 * bandScale, height: 116 * bandScale, background: "url('/assets/daffodils.webp') 180px bottom repeat-x", backgroundSize: 'auto 100%', filter: 'brightness(.93)' }} />
+        <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 120 * bandScale, background: "url('/assets/flowerbed.webp') -90px bottom repeat-x", backgroundSize: 'auto 100%' }} />
       </div>
 
       {/* Fixed logo */}
@@ -220,7 +220,7 @@ export default function Garden() {
 
       {/* Peeking cat head */}
       <div ref={contactCatRef} style={{ position: 'fixed', top: 0, left: '50%', marginLeft: -94, width: 188, height: 377, zIndex: 13, pointerEvents: 'none', transform: 'translateY(-100%)', transition: 'transform .6s cubic-bezier(.2,.85,.3,1)' }}>
-        <div style={{ width: '100%', height: '100%', background: "url('/assets/cathead.png') center bottom/contain no-repeat", transform: 'scaleY(-1)', filter: 'drop-shadow(0 10px 12px rgba(74,53,40,.22))' }} />
+        <div style={{ width: '100%', height: '100%', background: "url('/assets/cathead.webp') center bottom/contain no-repeat", transform: 'scaleY(-1)', filter: 'drop-shadow(0 10px 12px rgba(74,53,40,.22))' }} />
       </div>
 
       {/* Scroll spacer */}
