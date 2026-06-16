@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1260" viewBox="0 0 2400 1260">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="38%" r="80%">
+      <stop offset="0%" stop-color="#f3e8d3"/>
+      <stop offset="62%" stop-color="#e9dcc6"/>
+      <stop offset="100%" stop-color="#ddcdb0"/>
+    </radialGradient>
+    <!-- one carnation-ish bloom -->
+    <g id="bloom">
+      <g fill="#c9577a">
+        <ellipse cx="0" cy="-46" rx="34" ry="52"/>
+        <ellipse cx="0" cy="-46" rx="34" ry="52" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-46" rx="34" ry="52" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-46" rx="34" ry="52" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-46" rx="34" ry="52" transform="rotate(288)"/>
+      </g>
+      <g fill="#e07f9b">
+        <ellipse cx="0" cy="-30" rx="20" ry="32"/>
+        <ellipse cx="0" cy="-30" rx="20" ry="32" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-30" rx="20" ry="32" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-30" rx="20" ry="32" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-30" rx="20" ry="32" transform="rotate(288)"/>
+      </g>
+      <circle cx="0" cy="0" r="17" fill="#f4c54f"/>
+    </g>
+    <g id="leaf"><ellipse cx="0" cy="0" rx="22" ry="58" fill="#7b9e6b"/></g>
+  </defs>
+
+  <rect width="2400" height="1260" fill="url(#bg)"/>
+
+  <!-- drifting petals -->
+  <g fill="#c9577a" opacity="0.5">
+    <ellipse cx="300" cy="180" rx="14" ry="22" transform="rotate(30 300 180)"/>
+    <ellipse cx="1950" cy="240" rx="12" ry="19" transform="rotate(-20 1950 240)"/>
+    <ellipse cx="520" cy="1040" rx="13" ry="20" transform="rotate(50 520 1040)"/>
+    <ellipse cx="1700" cy="1080" rx="11" ry="18" transform="rotate(-40 1700 1080)"/>
+    <ellipse cx="2180" cy="760" rx="12" ry="19" transform="rotate(15 2180 760)"/>
+  </g>
+
+  <!-- floral sprig, right side -->
+  <g transform="translate(1880 630)">
+    <path d="M0 360 C -30 200, 30 80, 0 -40" stroke="#7b9e6b" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <use href="#leaf" transform="translate(-70 170) rotate(-38)"/>
+    <use href="#leaf" transform="translate(78 230) rotate(40)"/>
+    <use href="#leaf" transform="translate(60 60) rotate(28)"/>
+    <use href="#bloom" transform="translate(0 -70) scale(1.5)"/>
+    <use href="#bloom" transform="translate(-150 70) scale(1.05)"/>
+    <use href="#bloom" transform="translate(150 110) scale(1.15)"/>
+  </g>
+
+  <!-- text -->
+  <text x="200" y="430" font-family="'Snell Roundhand','Apple Chancery',Georgia,serif" font-style="italic" font-size="78" fill="#7b9e6b">a quiet garden of curiosity</text>
+  <text x="196" y="640" font-family="'Hoefler Text',Georgia,serif" font-size="200" fill="#3a2a20">Farah Safsafi</text>
+  <text x="206" y="760" font-family="Georgia, serif" font-size="46" letter-spacing="14" fill="#8c3d52">DATA &amp; AI · PORTFOLIO</text>
+  <text x="206" y="1080" font-family="Georgia, serif" font-size="40" letter-spacing="6" fill="#9e8b76">farah.etsukow.com</text>
+</svg>
